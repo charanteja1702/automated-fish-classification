@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style >
+     b{
+      font-family:  Georgia, sans-serif;
+      font-size: 20px;
+     }
+      table, th, td {
+        
+        
+  border: 1px solid black;
+  border-collapse: collapse;
+  bottom: 30%;
+}    
+th {
+  background-color: #04AA6D;
+  text-align: center;
+  padding-left: 1px;
+  color: white;
+}
+         
+
+ 
+      .mat{
+        position:fixed;
+        top:60%;
+        padding-left: 15em;
+        padding-right: 25em;
+      }
+        .split {
+            height: 35%;
+            width: 35%;
+            position: fixed;
+            z-index: 1;
+            top: 20%;
+          }
+          
+          /* Control the left side */
+          .left {
+            position: relative;
+            top: 20em;
+            left: 10%;
+            
+            padding-left: 0em;
+            
+          }
+          
+          /* Control the right side */
+          .right {
+            right: 25%;
+            padding-right:0em;
+            
+          }
+          
+          /* If you want the content centered horizontally and vertically */
+           .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+          
+          /* Style the image inside the centered container, if needed */
+           .centered img {
+            width: 350px;
+            border-radius: 0%;
+          }
+     </style>
+
+  <title>Image </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body style="background-color:#D4F1F4">
+    <div class="split left">
+        <div class="centered">
+          <img src="tem.png">
+          
+        </div>
+      </div>
+      
+    
+      <div class="container-login100-form-btn m-t-17">
+        <button class="btn btn-success" style="position: absolute; top: 10px; right: 10px; width: 100px; text-align:right;">
+          <a class="btn btn-success" href="/logout">Logout</a>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container-login100-form-btn m-t-17">
+    <button class="btn btn-success" style="position: absolute; top: 10px; right: 150px; width: 100px; text-align:right;">
+      <a class="btn btn-success" href="/up">Upload</a>
+    </button>
+  </div>
+      
+      <div class="split left">
+        <div class="centered">
+      <img src="{{img_path}}" height="200px" width="200px">
+      <h3> Your Prediction   : <i> {{prediction}} </i></h3>
+    </div>
+  </div>
+  <div class="split right">
+    <div class="centered">
+      {% if prediction %}
+      <script type = "text/javascript">
+        var book = {{ prediction |tojson }}
+        if( book == "Shrimp" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Shrimp</th></tr><tr><td>Scientific name</td><td>caridea</td></tr><tr><td>also called </td><td>Prawn,crangon</td></tr><tr><td>health benefits</td><td>rich in selenium,choline,vitamin B12</td></tr><tr><td>life span</td><td>1 to 6 years</td></tr><tr><td>Size</td><td>1.5 to 3 inch</td></tr></table>");
+           
+        } else if( book == "Hourse Mackerel" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Hourse Mackerel</th></tr><tr><td>Scientific name</td><td>Trachurus japonicus</td></tr><tr><td>also called </td><td>Scad,European Mackerel</td></tr><tr><td>health benefits</td><td>Mackerel is full of omega-3 fatty acids and contains a wealth of essential vitamins and minerals </td></tr><tr><td>life span</td><td>24-40yrs</td></tr><tr><td>Size</td><td>60cm</td></tr><tr><td>LINK</td><td><a href=https://www.youtube.com/>google</a></td></tr></table>");
+        } else if( book == "Black Sea Sprat" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>black Sea Sprat</th></tr><tr><td>Scientific name</td><td> Clupeonella cultriventris</td></tr><tr><td>also called </td><td>Caspin,azoz spart</td></tr><tr><td>health benefits</td><td>Vitamin B ,Omega 3, protein</td></tr><tr><td>life span</td><td>3 to 5 years</td></tr><tr><td>Size</td><td>7 to 7.62 cm</td></tr></table>");
+        } else if( book == "Gilt-Head Bream" ) {
+           document.write("<table BORDER=1 WIDTH=200% style=height:200px ><tr><th style=width:25%>Name</th><th>Gilt-Head Bream</th></tr><tr><td>Scientific name</td><td>Sparus aurata</td></tr><tr><td>also called </td><td>Orata,Dorada,Dourada,Dorade Royale </td></tr><tr><td>health benefits</td><td>excellent source of protein</td></tr><tr><td>life span</td><td>11 years</td></tr><tr><td>Size</td><td>1.15 ft</td></tr></table>");
+        } else if( book == "Red Mullet" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Red Mullet</th></tr><tr><td>Scientific name</td><td> Mullus barbatus</td></tr><tr><td>also called </td><td>Mugilidae,barbounia</td></tr><tr><td>health benefits</td><td>Medical bene:it is very rich in vitamins, minerals and extractives</td></tr><tr><td>life span</td><td>7.75years</td></tr><tr><td>Size</td><td>40cm</td></tr></table>");
+        } else if( book == "Red Sea Bream" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Red Sea Bream</th></tr><tr><td>Scientific name</td><td>Pagrus major</td></tr><tr><td>also called </td><td>Pagrus major</td></tr><tr><td>health benefits</td><td> Rich source of Protein,Boost the immune system</td></tr><tr><td>life span</td><td>20-40years</td></tr><tr><td>Size</td><td>35–40 cm</td></tr></table>");
+        } else if( book == "Sea Bass" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Sea Bass</th></tr><tr><td>Scientific name</td><td>Centropristis striata</td></tr><tr><td>also called </td><td> hamlet, hind, cony, graysby, grouper, and jewfish</td></tr><tr><td>health benefits</td><td>excellent sources of two omega-3 fatty acids: Eicosapentaenoic acid, or EPA, and docosahexaenoic acid, or DHA</td></tr><tr><td>life span</td><td>25 years</td></tr><tr><td>Size</td><td>12-18 inches</td></tr></table>");
+        } else if( book == "Striped Red Mullet" ) {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Striped Red Mullet</th></tr><tr><td>Scientific name</td><td>Mullus Surmuletus</td></tr><tr><td>also called </td><td>Mugilidea,Barbounia</td></tr><tr><td>health benefits</td><td> Iodine,iron,Phosphorous</td></tr><tr><td>life span</td><td>3 to 4 years</td></tr><tr><td>Size</td><td>16 to 45 cm</td></tr></table>");
+        } else {
+          document.write("<table BORDER=1 WIDTH=200% style=height:200px><tr><th style=width:25%>Name</th><th>Trout</th></tr><tr><td>Scientific name</td><td>Oncorhynchus mykiss</td></tr><tr><td>also called </td><td>Etta,kullu</td></tr><tr><td>health benefits</td><td> Protein,omega3 fatty acids,niacin</td></tr><tr><td>life span</td><td> 4 to 6 years</td></tr><tr><td>Size</td><td>  20 to 30 inches</td></tr></table>");
+             }
+  </script>
+  
+      <p>Click here for more information :<a href="https://en.wikipedia.org/wiki/{{prediction}}">{{prediction}}</a></p>
+    
+      {% endif %}
+    </div>
+  </div>
+  <div class="mat">
+  <script type = "text/javascript">
+    var book = {{ prediction |tojson }}
+    if( book == "Shrimp" ) {
+       document.write("<b>Shrimp is high in several vitamins and minerals, and it's a rich source of protein. Many studies have found astaxanthin may help strengthen arteries, which may reduce the risk of heart attacks. </b>");
+       
+    } else if( book == "Hourse Mackerel" ) {
+       document.write("<b>Horse mackerel are not real mackerel at all, belonging to a family of fish called carangidae made up of jacks and trevallies. They form large shoals over sandy bottomed ground, often schooling with herring or (actual) mackerel. There are two main stocks of Atlantic horse mackerel. The Northern stock spawns in the North sea and heads back to Northern waters, whereas the Western stock spawns in the Bay of Biscay and heads west as the fish mature.</b>");
+    } else if( book == "Black Sea Sprat" ) {
+       document.write("<b>Sprats are particularly useful for those wishing to increase their omega-3 intake, but they also provide large amounts of protein, B vitamins, and selenium.Overall, sprats are a tasty and extremely nutritious small fish..</b>");
+    } else if( book == "Gilt-Head Bream" ) {
+       document.write("<b>The Gilt-Head Bream is recommended for low-calorie diets because of its reduced fat and high protein content. Gilthead sea breams are also rich in calcium and phosphorus, which strengthen our bones. And of course, its rich content in Omega-3 fatty acids makes them a very healthy choice for all ages.</b>");
+    } else if( book == "Red Mullet" ) {
+       document.write("<b>Red mullet is known for its high levels of omega-3 fatty acids, iodine, iron and phosphorus, so it's healthy as well as delicious </b>");
+    } else if( book == "Red Sea Bream" ) {
+       document.write("<b>Sea bream is a healthy option, being low in calories and rich in B vitamins. A medium-sized portion will give you the recommended daily amount of vitamins and minerals to enhance the immune system and protect against heart disease and cancer.</b>");
+    } else if( book == "Sea Bass" ) {
+       document.write("<b>Sea bass is a white fish that has a mild delicate flavor with a subtle sweetness that is similar to grouper or cod. The flesh is moist, buttery, and tender, with firm medium-sized flakes like haddock. Sea bass is an excellent choice for people with a sensitive palate that don't enjoy “fishy tasting” seafood.</b>");
+    } else if( book == "Striped Red Mullet" ) {
+       document.write("<b>Trout is an excellent option when eating fish due to its high omega 3 fatty acid content and its low levels of mercury. While trout and salmon may look and taste similar they are distinct species of fish. The major difference between the two is that Trout is a freshwater fish, and Salmon is a saltwater fish. Salmon typically has a higher fat content than trout and is almost always larger in size</b>");
+    } else {
+            document.write("<b>a chiefly freshwater fish of the salmon family, found in both Eurasia and North America and highly valued for food and game.</b>");
+         }
+</script>
+
+      </div>
+    
+    
+    
+    </div>
+    
+    
+</body>
